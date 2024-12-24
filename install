@@ -1,0 +1,35 @@
+#!/bin/bash
+
+printf "\33[1;35mWELCOME TO INSTAF1NDER INSTALLATION!!\n"
+
+sleep 1
+
+printf "Creating python environtment for you......\t :)\n"
+
+sleep 1
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+cd $SCRIPT_DIR
+python -m venv venv
+source ./venv/bin/activate
+
+printf "Installing dependencies...................\t :)\n"
+
+sleep 1
+
+if ! python -m pip install -r ./requirements.txt; then
+    pip install -r ./requirements.txt
+fi
+
+printf "Creating the environment for you..........\t :)\n"
+
+sleep 1
+
+if ! printf "$SCRIPT_DIR/venv/bin/python3 $SCRIPT_DIR/main.py \$1 \$2 \$3 \$4" > /usr/bin/instaf1nder; then
+    printf "There's something wrong.. Did you run this with 'sudo'? If not please use it :)\n"
+else
+    chmod +x /usr/bin/instaf1nder
+    sleep 1
+    printf "DONE! Yeahh, Just it! Easy right?....\t :)\n"
+fi

@@ -10,7 +10,7 @@ ASCII_ART = rf"""
 {COLOURS.red}|_ _|{COLOURS.green}_ __ {COLOURS.yellow} ___{COLOURS.blue}| |_{COLOURS.white} __ _{COLOURS.magenta}|  ___{COLOURS.red}/ |{COLOURS.blue}_ __  {COLOURS.magenta} __| |{COLOURS.green} ___ {COLOURS.white}_ __ 
 {COLOURS.red} | ||{COLOURS.green} '_ \{COLOURS.yellow}/ __{COLOURS.blue}| __{COLOURS.white}/ _` {COLOURS.magenta}| |_  {COLOURS.red}| |{COLOURS.blue} '_ \ {COLOURS.magenta}/ _` |{COLOURS.green}/ _ \{COLOURS.white} '__|
 {COLOURS.red} | ||{COLOURS.green} | | {COLOURS.yellow}\__ {COLOURS.blue}\ ||{COLOURS.white} (_| {COLOURS.magenta}|  _| {COLOURS.red}| |{COLOURS.blue} | | |{COLOURS.magenta} (_| |{COLOURS.green}  __/{COLOURS.white} |   
-{COLOURS.red}|___|{COLOURS.green}_| |_{COLOURS.yellow}|___{COLOURS.blue}/\__{COLOURS.white}\__,_{COLOURS.magenta}|_|   {COLOURS.red}|_|{COLOURS.blue}_| |_|{COLOURS.magenta}\__,_|{COLOURS.green}\___|{COLOURS.white}_| {COLOURS.blue}v1.0
+{COLOURS.red}|___|{COLOURS.green}_| |_{COLOURS.yellow}|___/{COLOURS.blue}\__{COLOURS.white}\__,_{COLOURS.magenta}|_|   {COLOURS.red}|_|{COLOURS.blue}_| |_|{COLOURS.magenta}\__,_|{COLOURS.green}\___|{COLOURS.white}_| {COLOURS.blue}v1.0
 {COLOURS.blue_blink}--------------------------------------------------------{COLOURS.reset}{COLOURS.default}"""
 
 
