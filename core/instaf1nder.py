@@ -1,6 +1,8 @@
 from instagrapi import Client, types
 from typing import Dict, List
 
+VERSION = 1.1
+
 class InstaF1nder():
     def __init__(self, creds:Dict[str, str]|None=None):
         '''A Class used for finding instagram account information'''
