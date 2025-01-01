@@ -1,4 +1,6 @@
 from core.instaf1nder import InstaF1nder
+from instagrapi import types
+from typing import List
 import core.ui as ui
 import core.prettier as prettier
 import os
@@ -32,9 +34,13 @@ def main():
     prettier.printy("Successfully Login!", time=0.75)
     time.sleep(0.5)
 
+    pre_target = ""
     while True:
-        prettier.printy("Who will be the target this time: ", time=0.5, end="")
-        target = input(COLOURS.red)
+        target = pre_target
+        if target == "":
+            prettier.printy("Who will be the target this time: ", time=0.5, end="")
+            target = input(COLOURS.red)
+        pre_target = ""
         
         prettier.printy(f"Gathering {target} Information..", time=0.5)
         try:
@@ -113,10 +119,25 @@ def main():
                     else:
                         prettier.printy("Address Street is not available. (The user doesn't include his/her address to the instagram profile) :(")
                         input("(press enter)")
+
+            elif user_option == "8":
+                if last_user_option == "1":
+                    followers: List[types.UserShort] = ui.print_target_followers(target_information, instaf1nder)
+                    prettier.printy("Change Target? (index)")
+                    while True:
+                        try:
+                            prettier.printy("> ", end="")
+                            index = int(input())
+                            pre_target = followers[index].username
+                            if input(f"Target: {pre_target}?[y/n]") == "y":
+                                os.system("clear")
+                                break
+                        except ValueError:
+                            continue
+                        
                     
                     
-                    
-            elif user_option == "c":
+            if user_option == "c" or pre_target != "":
                 change_target = True
                 break
             

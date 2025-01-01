@@ -1,6 +1,14 @@
 # What is this?
 _instaf1nder.py_ is an instagram lookup software that can search for a user information on instagram. It still on development so it doesn't shows so much informations right now..
 
+# DISCLAIMER
+
+```
++------------------------------! DISCLAIMER !-----------------------------+
+| DON'T EVER USE THIS TOOL FOR BAD PURPOSES (i don't wanna be in trouble) |
++-------------------------------------------------------------------------+
+```
+
 # Setup
 ```sh
 $ git clone https://github.com/iwansal64/instaf1nder-py.git

@@ -35,11 +35,9 @@ class InstaF1nder():
     def get_user_info_by_id(self, user_id: str, use_cache: bool) -> types.User:
         return self.client.user_info(user_id, use_cache)
 
-    def get_user_following(self, username: str, max_amount: int) -> List[types.UserShort]:
-        user_id = self.client.user_id_from_username(username)
+    def get_user_following(self, user_id: str, max_amount: int) -> List[types.UserShort]:
         return self.client.user_following_v1(user_id, max_amount)
     
-    def get_user_followers(self, username: str, max_amount: int) -> List[types.UserShort]:
-        user_id = self.client.user_id_from_username(username)
-        return self.client.user_followers_v1(user_id, max_amount)
+    def get_user_followers(self, user_id: str, max_amount: int) -> List[types.UserShort]:
+        return list(self.client.user_followers(user_id, max_amount).values())
         

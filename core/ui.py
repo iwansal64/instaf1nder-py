@@ -1,7 +1,8 @@
 from core.prettier import COLOURS
-import core.prettier as prettier
-from core.instaf1nder import VERSION
+from core.instaf1nder import VERSION, InstaF1nder
 from instagrapi import types
+from typing import List
+import core.prettier as prettier
 import time
 import os
 import art
@@ -101,6 +102,15 @@ def print_target_contacts(user_data: types.User, is_dump: bool = False, dump_fil
         with open(dump_file_path, "w" if overwrite else "a+") as f:
             f.write(f"\nCONTACT:\n---------\nContact Phone Number         : {str(user_data.contact_phone_number)}\nPublic Phone Number          : {str(user_data.public_phone_number)}\nPublic Phone Country Code    : {str(user_data.public_phone_country_code)}\nPublic Email                 : {str(user_data.public_email)}\nBusiness Contact Method      : {str(user_data.business_contact_method)}\n")
 
+def print_target_followers(user_data: types.User, instaf1inder: InstaF1nder, is_dump: bool = False) -> List[types.UserShort]:
+    prettier.printy("Getting followers information...", time = 0.5, end = "\r")
+    followers: List[types.UserShort] = instaf1inder.get_user_followers(user_data.pk, 100)
+    prettier.printy("FOLLOWERS:            ")
+    prettier.printy("------------")
+    for index, follower in enumerate(followers[:max(len(followers), 100)]):
+        prettier.printy(f"{index}. {follower.username}")
+    return followers
+
 def print_options(last_option: str = "-1"):
     '''Print options to do'''
     print()
@@ -114,6 +124,8 @@ def print_options(last_option: str = "-1"):
         prettier.printy("******************** DATA PROCESS *********************")
         prettier.printy("6. Dump ............. Save it for later research?", COLOURS.blue, time=0.2)
         prettier.printy("7. Map .............. Search adress street in map?", COLOURS.blue, time=0.2)
+        prettier.printy("8. Followers ........ Get followers data", COLOURS.blue, time=0.2)
+        prettier.printy("9. Following ........ Get following data", COLOURS.blue, time=0.2)
     elif last_option == "2":
         prettier.printy("******************** DATA PROCESS *********************")
         prettier.printy("6. Dump ............. Save it for later research?", COLOURS.blue, time=0.2)
@@ -129,7 +141,7 @@ def print_options(last_option: str = "-1"):
     elif last_option == "5":
         prettier.printy("******************** DATA PROCESS *********************")
         prettier.printy("6. Dump ............. Save it for later research?", COLOURS.blue, time=0.2)
-        
+
     prettier.printy("************************ OTHER ************************", COLOURS.green)
     prettier.printy("c. Change ........... You have another target to search?", COLOURS.blue)
     prettier.printy("q. Quit ............. Are you done bro?", COLOURS.blue)
