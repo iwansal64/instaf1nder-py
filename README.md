@@ -13,8 +13,9 @@ here's the one line installation
 git clone https://github.com/iwansal64/instaf1nder-py.git && cd instaf1nder-py && sudo ./install && instaf1nder
 ```
 
-and that's pretty much it..
-Now your computer should can run the program now by typing `instaf1nder`
+You can add `creds.txt` to the program's folder that contains the username and the password with this format: `{username},{password}` without any space between them and that's pretty much it!
+
+Now your computer should can run the program now by typing `instaf1nder` without any issues :)
 
 ## First Look
 When you run `instaf1nder` it will output something like this :
