@@ -4,12 +4,10 @@ _instaf1nder.py_ is an instagram lookup software that can search for a user info
 # ETHICAL USAGE
 
 ```
-+------------! ETHICAL USAGE !--------------+
-| This project is intended for ethical use  |
-| only. It must not be used in applications |
-|  that promote harm, discrimination, or    |
-|       violations of human rights.         |
-+-------------------------------------------+
++--------------------------------------------------! ETHICAL USAGE !----------------------------------------------+
+|       This project is intended for ethical use only. It must not be used in applications that promote harm,     |
+|                                   discrimination, or violations of human rights.                                |
++-----------------------------------------------------------------------------------------------------------------+
 ```
 
 # Setup
